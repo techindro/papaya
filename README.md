@@ -64,6 +64,7 @@ Right now, AI models, backend servers, and IoT setups can talk to each other, bu
 
 ## Architecture
 
+```mermaid
 flowchart TD
     %% Telemetry Layer
     subgraph CLIENT_LAYER [Frontend & Client Layer]
@@ -95,7 +96,6 @@ flowchart TD
     style CORE_ENGINE fill:#112a2e,stroke:#009688,stroke-width:2px;
     style PAYMENT_GATEWAY fill:#2e1f11,stroke:#f97316,stroke-width:2px;
     style DEPLOYMENT_LAYER fill:#2d1215,stroke:#ff4b4b,stroke-width:2px;
-
 ```
 
 ### Infrastructure Core Stack
@@ -196,8 +196,6 @@ papaya/
 **Shubham Patel**, Lead AI Systems Architect & Core Infrastructure Developer
 
 **Pratyush Kumar Nishad**, Full-Stack Integration Engineer & Product Lead
-
-<div align="center">
 
 ## License
 
