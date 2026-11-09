@@ -2,8 +2,6 @@
 
 <img src="assets/logo.jpg" alt="Papaya Logo" width="320">
 
-# PAPAYA
-
 ### Automated Payment Layer for Servers and AI Nodes  
 ### LET MACHINES DO THE WORK AND PAY THEMSELVES  
 **NEXT-GENERATION AUTONOMOUS COMPUTE TRANSACTION INFRASTRUCTURE.**
