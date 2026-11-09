@@ -65,7 +65,7 @@ Right now, AI models, backend servers, and IoT setups can talk to each other, bu
 ## Architecture
 
 ```mermaid
-flowchart TD
+flowchart LR
     subgraph CLIENT_LAYER ["Telemetry and Dashboard Layer"]
         A["Resource Sensor Node<br/>CPU / Token Streams"] --> B["Telemetry Tracker<br/>Psutil + NumPy"]
         K["Streamlit Dashboard<br/>Plotly Graphs"]
