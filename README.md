@@ -185,10 +185,6 @@ papaya/
 
 <br>
 
-<div align="center">
-
 ## License
-
-This software project is open-source and released under the terms of the **MIT License**. For complete guidelines, read the `LICENSE` file in the root workspace directory.
-
+Released under the [MIT License](https://opensource.org/licenses/MIT).
 </div>
