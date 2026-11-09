@@ -66,36 +66,28 @@ Right now, AI models, backend servers, and IoT setups can talk to each other, bu
 
 ```mermaid
 flowchart TD
-    %% Telemetry Layer
-    subgraph CLIENT_LAYER [Frontend & Client Layer]
-        A[Learner Browser] ──▶ B(Streamlit Dashboard)
-        B ──▶ C[Telemetry Tracker]
+    subgraph CLIENT_LAYER ["Telemetry and Dashboard Layer"]
+        A["Resource Sensor Node<br/>CPU / Token Streams"] --> B["Telemetry Tracker<br/>Psutil + NumPy"]
+        K["Streamlit Dashboard<br/>Plotly Graphs"]
     end
 
-    %% Analytics and Modeling
-    subgraph CORE_ENGINE [FastAPI Core Engine]
-        C ──▶|REST| D[Data Validator Layer]
-        D ──▶ E[Analytical Modeler]
+    subgraph CORE_ENGINE ["FastAPI Core Engine"]
+        D["Data Validator Layer<br/>Pydantic"] --> E["Analytical Modeler<br/>Pricing Code"]
     end
 
-    %% Payment Gateway Integration
-    subgraph PAYMENT_GATEWAY [PayPal Sandbox Integration]
-        E ──▶ F[OAuth 2.0 Security Client]
-        F ──▶ G[PayPal Sandbox Gateway]
-        G ──▶ H[Automated Order Capture]
-        H ──▶ I[Sovereign Node Logs]
+    subgraph PAYMENT_GATEWAY ["PayPal Sandbox Integration"]
+        F["OAuth 2.0 Security Client<br/>Fetch PayPal Token"] --> G["PayPal Sandbox Gateway<br/>v2 Checkout Orders"]
+        G --> H["Automated Order Capture<br/>Payment Complete"]
+        H --> I["Sovereign Node Logs"]
     end
 
-    %% Deployment
-    subgraph DEPLOYMENT_LAYER [Infrastructure Deployment]
-        I ──▶ J[Vercel Serverless Functions]
-    end
+    B -->|"JSON via REST"| D
+    E -->|"Final Cost Value"| F
+    I -->|"Payment logs"| K
 
-    %% Style Mapping
-    style CLIENT_LAYER fill:#1c1c1e,stroke:#3a3a3c,stroke-width:2px;
-    style CORE_ENGINE fill:#112a2e,stroke:#009688,stroke-width:2px;
-    style PAYMENT_GATEWAY fill:#2e1f11,stroke:#f97316,stroke-width:2px;
-    style DEPLOYMENT_LAYER fill:#2d1215,stroke:#ff4b4b,stroke-width:2px;
+    style CLIENT_LAYER fill:#f3f4f6,stroke:#6b7280,stroke-width:2px,color:#111827
+    style CORE_ENGINE fill:#e0f2f1,stroke:#009688,stroke-width:2px,color:#111827
+    style PAYMENT_GATEWAY fill:#fff1e6,stroke:#f97316,stroke-width:2px,color:#111827
 ```
 
 ### Infrastructure Core Stack
