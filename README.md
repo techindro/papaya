@@ -10,12 +10,12 @@
 
 <br>
 
-[![Live](https://shields.io)](#)
-[![API](https://shields.io)](#)
-[![Nodes](https://shields.io)](#)
-[![Dashboard](https://shields.io)](#)
-[![AI](https://shields.io)](#)
-[![License](https://shields.io)](LICENSE)
+[![Live](https://img.shields.io/badge/Live-PayPal%20Sandbox-f97316?style=for-the-badge&logo=paypal&logoColor=white)](#)
+[![API](https://img.shields.io/badge/API-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](#)
+[![Nodes](https://img.shields.io/badge/Nodes-Servers%20%7C%20AI-10b981?style=for-the-badge&logo=serverfault&logoColor=white)](#)
+[![Dashboard](https://img.shields.io/badge/Dashboard-Streamlit-ff4b4b?style=for-the-badge&logo=streamlit&logoColor=white)](#)
+[![AI](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](#)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
 <br>
 
@@ -65,39 +65,13 @@ Right now, AI models, backend servers, and IoT setups can talk to each other, bu
 ## Architecture
 
 ```mermaid
-flowchart TD
-    %% Telemetry Layer
-    subgraph TELEMETRY_SENSOR_NETWORK [Telemetry & Metric Extraction]
-        A[Resource Sensor Node] -->|psutil Core Metrics| B(Raw System Payload)
-        B -->|CPU Load & Token Stream JSON| C[Data Validator Layer]
-    end
-
-    %% Analytics and Modeling
-    subgraph ORCHESTRATOR_CORE [FastAPI Core Engine]
-        C -->|Valid Payloads| D[FastAPI Route Manager]
-        D -->|Analytical Logic Processing| E[Pricing Score Calculator]
-        E -->|Final Cost Formula Settle| F[Internal Runtime State]
-    end
-
-    %% Payment Gateway Integration
-    subgraph PAYPAL_SANDBOX_INTEGRATION [Financial Settlement Gate]
-        F -->|Fetch Authorization| G[OAuth 2.0 Security Client]
-        G -->|Bearer Access Token| H[PayPal v2 Order Handler]
-        H -->|Auto Setup Session| I[PayPal Sandbox Gateway]
-        I -->|Zero UI Automation Capture| J[Instant Payment Capture]
-    end
-
-    %% Visual Logging Update
-    subgraph LIVE_ANALYTICS_DASHBOARD [Visual Dashboard Panel]
-        J -->|Transaction Log Packets| K[Streamlit System Terminal]
-        K -->|Plotly Visual Renders| L[Live Analytics Charts]
-    end
-
-    %% Style Mapping
-    style TELEMETRY_SENSOR_NETWORK fill:#1c1c1e,stroke:#3a3a3c,stroke-width:2px;
-    style ORCHESTRATOR_CORE fill:#112a2e,stroke:#009688,stroke-width:2px;
-    style PAYPAL_SANDBOX_INTEGRATION fill:#2e1f11,stroke:#f97316,stroke-width:2px;
-    style LIVE_ANALYTICS_DASHBOARD fill:#2d1215,stroke:#ff4b4b,stroke-width:2px;
+flowchart LR
+    Node[Resource Sensor Node<br/>CPU / Token Streams] -->|JSON Data| Server[FastAPI Core Orchestrator<br/>Backend App]
+    Server -->|Read Workload| Model[Analytical Load Modeler<br/>Pricing Code]
+    Model -->|Final Cost Value| Auth[OAuth 2.0 Gate<br/>Fetch PayPal Token]
+    Auth -->|Create Order Request| Gateway[PayPal Sandbox Gateway<br/>v2 Checkout Orders]
+    Gateway -->|Auto Capture| Capture[Instant Billing Capture<br/>Payment Complete]
+    Capture -->|Update UI| Dashboard[Streamlit Dashboard Panel<br/>Plotly Visual Graphs]
 ```
 
 ### Infrastructure Core Stack
@@ -134,7 +108,7 @@ flowchart TD
 
 ```bash
 # Clone the project repository
-git clone https://github.com
+git clone https://github.com/papaya.git
 cd papaya
 
 # Create and activate a clean virtual environment
