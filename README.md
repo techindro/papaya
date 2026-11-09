@@ -1,19 +1,14 @@
+<div align="center">
+
+<img src="assets/logo.jpg" alt="Papaya Logo" width="320">
+
 # PAPAYA
 
 ### Automated Payment Layer for Servers and AI Nodes  
 ### LET MACHINES DO THE WORK AND PAY THEMSELVES  
 **NEXT-GENERATION AUTONOMOUS COMPUTE TRANSACTION INFRASTRUCTURE.**
 
-<div align="center">
-
-[![Live](https://shields.io)](#)
-[![API](https://shields.io)](#)
-[![Nodes](https://shields.io)](#)
-[![Rating](https://shields.io★-f59e0b?style=for-the-badge&logo=star)](#)
-[![AI](https://shields.io)](#)
-[![License](https://shields.io)](LICENSE)
-
-[Website](#) · [API](#) · [LinkedIn](https://linkedin.com) · [YouTube](https://youtube.com) · [GitHub](https://github.com)
+**@tech.indro**
 
 </div>
 
@@ -40,28 +35,6 @@ Right now, AI models, backend servers, and IoT setups can talk to each other, bu
 | **Automated Order Capture** | Instantly claims the payment as soon as the server work is finished. |
 | **Dynamic Billing Dashboard** | A plain Python web app that shows real-time usage graphs and payment logs. |
 | **Sovereign Node Logs** | Keeps a straight text list of current script tasks, security tokens, and success alerts. |
-
----
-
-## Repository Structure
-
-```text
-papaya/
-│
-├── .gitignore               # Excludes caches, local environments, and token flags
-├── LICENSE                  # MIT License terms open-source protection
-├── README.md                # System documentation and deployment blueprints
-├── requirements.txt         # Production software package dependencies
-│
-├── backend/                 # High-performance processing server compartment
-│   ├── __init__.py
-│   ├── config.py            # API paths and credential properties configuration
-│   └── main.py              # FastAPI application server core communication logic
-│
-└── simulator/               # Live interactive demonstration environment
-    ├── __init__.py
-    └── app_dashboard.py     # Streamlit application UI dashboard displaying metric logs
-```
 
 ---
 
@@ -135,14 +108,43 @@ Open **http://localhost:8501** in your web browser to check the working project 
 
 ---
 
-## Contributing Team
+## Repository Structure
 
-* **Shubham Patel** — Lead AI Systems Architect & Core Infrastructure Developer
-* **Pratyush Kumar Nishad** — Full-Stack Integration Engineer & Product Lead
+```text
+papaya/
+│
+├── .gitignore               # Excludes caches, local environments, and token flags
+├── LICENSE                  # MIT License terms open-source protection
+├── README.md                # System documentation and deployment blueprints
+├── requirements.txt         # Production software package dependencies
+│
+├── assets/
+│   └── logo.jpg             # Project logo
+│
+├── backend/                 # High-performance processing server compartment
+│   ├── __init__.py
+│   ├── config.py            # API paths and credential properties configuration
+│   └── main.py              # FastAPI application server core communication logic
+│
+└── simulator/               # Live interactive demonstration environment
+    ├── __init__.py
+    └── app_dashboard.py     # Streamlit application UI dashboard displaying metric logs
+```
 
 ---
+
+## Contributing Team
+
+**Shubham Patel**, Lead AI Systems Architect & Core Infrastructure Developer  
+**Pratyush Kumar Nishad**, Full-Stack Integration Engineer & Product Lead
+
+
+---
+
+<div align="center">
 
 ## License
 
 This software project is open-source and released under the terms of the **MIT License**. For complete guidelines, read the `LICENSE` file in the root workspace directory.
 
+</div>
