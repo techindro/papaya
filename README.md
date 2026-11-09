@@ -167,23 +167,11 @@ papaya/
     └── app_dashboard.py     # Streamlit application UI dashboard displaying metric logs
 ```
 
-<br>
-
----
-
-<br>
-
 ## Contributing Team
 
 **Shubham Patel**, Lead AI Systems Architect & Core Infrastructure Developer
 
 **Pratyush Kumar Nishad**, Full-Stack Integration Engineer & Product Lead
-
-<br>
-
----
-
-<br>
 
 ## License
 Released under the [MIT License](https://opensource.org/licenses/MIT).
