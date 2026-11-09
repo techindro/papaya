@@ -2,24 +2,54 @@
 
 <img src="assets/logo.jpg" alt="Papaya Logo" width="320">
 
-### Automated Payment Layer for Servers and AI Nodes  
-### LET MACHINES DO THE WORK AND PAY THEMSELVES  
+<br>
+
+# PAPAYA
+
+<br>
+
+### Automated Payment Layer for Servers and AI Nodes
+
+### LET MACHINES DO THE WORK AND PAY THEMSELVES
+
 **NEXT-GENERATION AUTONOMOUS COMPUTE TRANSACTION INFRASTRUCTURE.**
+
+<br>
+
+[![Live](https://img.shields.io/badge/Live-PayPal%20Sandbox-f97316?style=for-the-badge&logo=paypal&logoColor=white)](#)
+[![API](https://img.shields.io/badge/API-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](#)
+[![Nodes](https://img.shields.io/badge/Nodes-Servers%20%7C%20AI-10b981?style=for-the-badge&logo=serverfault&logoColor=white)](#)
+[![Dashboard](https://img.shields.io/badge/Dashboard-Streamlit-ff4b4b?style=for-the-badge&logo=streamlit&logoColor=white)](#)
+[![AI](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](#)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
+
+<br>
 
 </div>
 
+<br>
+
 ---
+
+<br>
 
 ## Why Papaya
 
 Right now, AI models, backend servers, and IoT setups can talk to each other, but they cannot pay for resources on their own. When a script needs more computing power or wants to use a data tool, it has to wait for a human to put in credit card details or settle an invoice. **Papaya gives machines their own payment setups** by connecting live server workload tracking directly to the PayPal Sandbox API:
 
 - **Machine Wallets** — Lets backend servers and code tasks handle money directly without a human filling out checkout forms.
+
 - **Load-Based Billing** — Tracks how hard the server is working (like CPU usage and data tokens) to calculate fair prices instantly.
+
 - **No-UI Checkout** — Runs entirely in the background via direct backend code requests, completely skipping pop-ups and web browser redirections.
+
 - **Exact Micro-Payments** — Charges only for the small amount of server work done, making things highly efficient.
 
+<br>
+
 ---
+
+<br>
 
 ## Product Suite
 
@@ -32,7 +62,11 @@ Right now, AI models, backend servers, and IoT setups can talk to each other, bu
 | **Dynamic Billing Dashboard** | A plain Python web app that shows real-time usage graphs and payment logs. |
 | **Sovereign Node Logs** | Keeps a straight text list of current script tasks, security tokens, and success alerts. |
 
+<br>
+
 ---
+
+<br>
 
 ## Architecture
 
@@ -55,7 +89,11 @@ flowchart LR
 | 2 | **Telemetry Tracker** | Psutil + NumPy | Reading laptop or server CPU loads |
 | 3 | **Visual Dashboard** | Streamlit + Plotly | Showing charts and logs in a clean web view |
 
+<br>
+
 ---
+
+<br>
 
 ## Security & Reliability
 
@@ -66,7 +104,11 @@ flowchart LR
 | **Offline Fallback** | If the payment network goes down, the system shifts to safe local calculations. |
 | **Error Handling** | Clean code blocks ensure network timeouts never freeze your main server scripts. |
 
+<br>
+
 ---
+
+<br>
 
 ## Quick Start
 
@@ -102,7 +144,11 @@ Open **http://localhost:8501** in your web browser to check the working project 
 | `PAYPAL_CLIENT_ID` | Yes | The app client string from your PayPal developer panel. |
 | `PAYPAL_CLIENT_SECRET` | Yes | The private app secret string for logging in securely. |
 
+<br>
+
 ---
+
+<br>
 
 ## Repository Structure
 
@@ -127,15 +173,23 @@ papaya/
     └── app_dashboard.py     # Streamlit application UI dashboard displaying metric logs
 ```
 
+<br>
+
 ---
+
+<br>
 
 ## Contributing Team
 
-**Shubham Patel**, Lead AI Systems Architect & Core Infrastructure Developer  
+**Shubham Patel**, Lead AI Systems Architect & Core Infrastructure Developer
+
 **Pratyush Kumar Nishad**, Full-Stack Integration Engineer & Product Lead
 
+<br>
 
 ---
+
+<br>
 
 <div align="center">
 
