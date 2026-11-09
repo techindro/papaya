@@ -65,13 +65,39 @@ Right now, AI models, backend servers, and IoT setups can talk to each other, bu
 ## Architecture
 
 ```mermaid
-flowchart LR
-    Node[Resource Sensor Node<br/>CPU / Token Streams] -->|JSON Data| Server[FastAPI Core Orchestrator<br/>Backend App]
-    Server -->|Read Workload| Model[Analytical Load Modeler<br/>Pricing Code]
-    Model -->|Final Cost Value| Auth[OAuth 2.0 Gate<br/>Fetch PayPal Token]
-    Auth -->|Create Order Request| Gateway[PayPal Sandbox Gateway<br/>v2 Checkout Orders]
-    Gateway -->|Auto Capture| Capture[Instant Billing Capture<br/>Payment Complete]
-    Capture -->|Update UI| Dashboard[Streamlit Dashboard Panel<br/>Plotly Visual Graphs]
+flowchart TD
+    %% Telemetry Layer
+    subgraph TELEMETRY_SENSOR_NETWORK [Telemetry & Metric Extraction]
+        A[Resource Sensor Node] -->|psutil Core Metrics| B(Raw System Payload)
+        B -->|CPU Load & Token Stream JSON| C[Data Validator Layer]
+    end
+
+    %% Analytics and Modeling
+    subgraph ORCHESTRATOR_CORE [FastAPI Core Engine]
+        C -->|Valid Payloads| D[FastAPI Route Manager]
+        D -->|Analytical Logic Processing| E[Pricing Score Calculator]
+        E -->|Final Cost Formula Settle| F[Internal Runtime State]
+    end
+
+    %% Payment Gateway Integration
+    subgraph PAYPAL_SANDBOX_INTEGRATION [Financial Settlement Gate]
+        F -->|Fetch Authorization| G[OAuth 2.0 Security Client]
+        G -->|Bearer Access Token| H[PayPal v2 Order Handler]
+        H -->|Auto Setup Session| I[PayPal Sandbox Gateway]
+        I -->|Zero UI Automation Capture| J[Instant Payment Capture]
+    end
+
+    %% Visual Logging Update
+    subgraph LIVE_ANALYTICS_DASHBOARD [Visual Dashboard Panel]
+        J -->|Transaction Log Packets| K[Streamlit System Terminal]
+        K -->|Plotly Visual Renders| L[Live Analytics Charts]
+    end
+
+    %% Style Mapping
+    style TELEMETRY_SENSOR_NETWORK fill:#1c1c1e,stroke:#3a3a3c,stroke-width:2px;
+    style ORCHESTRATOR_CORE fill:#112a2e,stroke:#009688,stroke-width:2px;
+    style PAYPAL_SANDBOX_INTEGRATION fill:#2e1f11,stroke:#f97316,stroke-width:2px;
+    style LIVE_ANALYTICS_DASHBOARD fill:#2d1215,stroke:#ff4b4b,stroke-width:2px;
 ```
 
 ### Infrastructure Core Stack
@@ -173,6 +199,10 @@ papaya/
 
 **Pratyush Kumar Nishad**, Full-Stack Integration Engineer & Product Lead
 
+<div align="center">
+
 ## License
+
 Released under the [MIT License](https://opensource.org/licenses/MIT).
+
 </div>
