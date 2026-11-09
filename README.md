@@ -108,7 +108,7 @@ flowchart LR
 
 ```bash
 # Clone the project repository
-git clone https://github.com/papaya.git
+git clone https://github.com/techindro/papaya.git
 cd papaya
 
 # Create and activate a clean virtual environment
