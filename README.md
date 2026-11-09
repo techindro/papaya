@@ -64,40 +64,38 @@ Right now, AI models, backend servers, and IoT setups can talk to each other, bu
 
 ## Architecture
 
-```mermaid
 flowchart TD
     %% Telemetry Layer
-    subgraph TELEMETRY_SENSOR_NETWORK [Telemetry & Metric Extraction]
-        A[Resource Sensor Node] -->|psutil Core Metrics| B(Raw System Payload)
-        B -->|CPU Load & Token Stream JSON| C[Data Validator Layer]
+    subgraph CLIENT_LAYER [Frontend & Client Layer]
+        A[Learner Browser] ──▶ B(Streamlit Dashboard)
+        B ──▶ C[Telemetry Tracker]
     end
 
     %% Analytics and Modeling
-    subgraph ORCHESTRATOR_CORE [FastAPI Core Engine]
-        C -->|Valid Payloads| D[FastAPI Route Manager]
-        D -->|Analytical Logic Processing| E[Pricing Score Calculator]
-        E -->|Final Cost Formula Settle| F[Internal Runtime State]
+    subgraph CORE_ENGINE [FastAPI Core Engine]
+        C ──▶|REST| D[Data Validator Layer]
+        D ──▶ E[Analytical Modeler]
     end
 
     %% Payment Gateway Integration
-    subgraph PAYPAL_SANDBOX_INTEGRATION [Financial Settlement Gate]
-        F -->|Fetch Authorization| G[OAuth 2.0 Security Client]
-        G -->|Bearer Access Token| H[PayPal v2 Order Handler]
-        H -->|Auto Setup Session| I[PayPal Sandbox Gateway]
-        I -->|Zero UI Automation Capture| J[Instant Payment Capture]
+    subgraph PAYMENT_GATEWAY [PayPal Sandbox Integration]
+        E ──▶ F[OAuth 2.0 Security Client]
+        F ──▶ G[PayPal Sandbox Gateway]
+        G ──▶ H[Automated Order Capture]
+        H ──▶ I[Sovereign Node Logs]
     end
 
-    %% Visual Logging Update
-    subgraph LIVE_ANALYTICS_DASHBOARD [Visual Dashboard Panel]
-        J -->|Transaction Log Packets| K[Streamlit System Terminal]
-        K -->|Plotly Visual Renders| L[Live Analytics Charts]
+    %% Deployment
+    subgraph DEPLOYMENT_LAYER [Infrastructure Deployment]
+        I ──▶ J[Vercel Serverless Functions]
     end
 
     %% Style Mapping
-    style TELEMETRY_SENSOR_NETWORK fill:#1c1c1e,stroke:#3a3a3c,stroke-width:2px;
-    style ORCHESTRATOR_CORE fill:#112a2e,stroke:#009688,stroke-width:2px;
-    style PAYPAL_SANDBOX_INTEGRATION fill:#2e1f11,stroke:#f97316,stroke-width:2px;
-    style LIVE_ANALYTICS_DASHBOARD fill:#2d1215,stroke:#ff4b4b,stroke-width:2px;
+    style CLIENT_LAYER fill:#1c1c1e,stroke:#3a3a3c,stroke-width:2px;
+    style CORE_ENGINE fill:#112a2e,stroke:#009688,stroke-width:2px;
+    style PAYMENT_GATEWAY fill:#2e1f11,stroke:#f97316,stroke-width:2px;
+    style DEPLOYMENT_LAYER fill:#2d1215,stroke:#ff4b4b,stroke-width:2px;
+
 ```
 
 ### Infrastructure Core Stack
